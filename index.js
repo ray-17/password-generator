@@ -14,6 +14,16 @@ let length = document.getElementById('length')
 let password1 = ""
 let password2 = ""
 let toggle = document.getElementById('toggle')
+let saved = JSON.parse(localStorage.getItem("theme"))
+
+if(saved !== null){
+	toggle.checked = saved;
+	if(saved){
+		document.body.classList.add("light")
+	}else{
+		document.body.classList.remove("light")
+	}
+}
 function generatePassword(){
 	for(let i = 0; i < Number(slider.value); i++){
 		let randomIndex1 = Math.floor(Math.random() * characters.length)
@@ -59,9 +69,10 @@ slider.addEventListener("input", function(){
 })
 
 toggle.addEventListener("change", function(){
+	localStorage.setItem("theme", JSON.stringify(this.checked))
 	if(this.checked){
-		document.body.classList.toggle("light")
+		document.body.classList.add("light")
 	}else{
-		document.body.classList.toggle("light")
+		document.body.classList.remove("light")
 	}
 })
