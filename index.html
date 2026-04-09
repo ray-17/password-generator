@@ -1,0 +1,47 @@
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <link rel="stylesheet" href="index.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <div class="container">
+            <div class="togglecontainer">
+        <label class="switch">
+          <input type="checkbox" id="toggle">
+          <span class="toggle"></span>
+        </label>
+        </div>
+            <section>
+                <h1>Generate a <br>
+                    <span>random password</span>
+                </h1>
+                <p class="motto">Never use an insecure password again.</p>
+                <button onclick="generatePassword()">Generate passwords</button>
+                <div class="slidecontainer">
+                    <div class="info">
+                    <p class="">Password Length: </p>
+                    <span id="length" class="length">15</span>
+                    </div>
+                    <input type="range" min="8" max = "25" value="15" step="1" class="slider" id="myRange" name="">
+                </div>
+                <hr>
+                <div class="passwords">
+                    <div id="pass1" class="pass"></div>
+
+                <div id="pass2" class="pass"></div></div>
+                <p id="alert" class="alert">Copied!</p>
+            </section>
+
+        </div>
+
+
+        <script src="index.js"></script>
+    </body>
+</html>
